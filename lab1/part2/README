@@ -1,0 +1,27 @@
+CLONE SHELL:
+	The purpose of this assignment was to implement the portion of the code
+	that handles the creation of new processes. The clone shell "closh" takes
+	3 additional input from the user: a number for copies of the process, a timeout, and 
+	whether the processes should execute sequentially or in parallel. 
+	(This implementaion is located below "TODO")
+
+
+DESIGN CHOICE OUTLINE: Parallel v Sequential for Closh
+
+	For both there is a count-loop (see closh comments) to fork the number processes specified by user input
+
+		For PARALLEL the parent forks the children and reaps them after ALL of the forking is finished -- after the count-loop
+
+		For SEQUENTIAL the parent reaps children whithin the count-loop -- therefore a new process will not be forked until after the provious one has terminated and been reaped, making this sequential. 
+
+	For implementing the timeouts:
+
+		For PARALLEL 
+			all the forked pids are stored
+			the parent sleeps the timeout outside of the count-loop -- after all children are created
+			then the parent ierates over the stored pids and kills each
+
+		For SEQUENTIAL
+			the parent sleeps the timeout inside of the count-loop -- so after each i^th child is created
+			then the parent kills this i^th child
+

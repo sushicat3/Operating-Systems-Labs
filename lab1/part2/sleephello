@@ -1,0 +1,10 @@
+#!/bin/bash
+# Sample bash script that sleeps for 3 seconds and then prints.
+
+#sleep 3
+#echo "Hello World"
+
+sleep 1
+echo "Hello World"
+sleep 1
+echo "Hello World Again!"

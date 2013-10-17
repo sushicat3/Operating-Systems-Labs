@@ -1,0 +1,49 @@
+elnux4> ./closh
+closh> ./sleephello
+  count> 2
+  [p]arallel or [s]equential> p
+  timeout> 0
+process 24483 forked
+process 24484 forked
+Hello World
+Hello World
+Hello World Again!
+process 24483 terminated
+Hello World Again!
+process 24484 terminated
+closh> ./sleephello
+  count> 2
+  [p]arallel or [s]equential> p
+  timeout> 2
+process 24716 forked
+process 24717 forked
+Hello World
+Hello World
+process 24717 terminated
+process 24716 terminated
+closh> ./sleephello
+  count> 3
+  [p]arallel or [s]equential> s
+  timeout> 0
+process 24764 forked
+Hello World
+Hello World Again!
+process 24764 terminated
+process 24768 forked
+Hello World
+Hello World Again!
+process 24768 terminated
+process 24771 forked
+Hello World
+Hello World Again!
+process 24771 terminated
+closh> ./sleephello
+  count> 2
+  [p]arallel or [s]equential> s
+  timeout> 2
+process 24777 forked
+Hello World
+process 24777 terminated
+process 24780 forked
+Hello World
+process 24780 terminated
